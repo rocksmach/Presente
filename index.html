@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Pix de Aniversário 🎉</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #007bff;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        img {
+            max-width: 300px;
+            width: 80%;
+            margin: 20px auto;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+        }
+        .codigo-pix {
+            background-color: #eaf7ea;
+            border: 1px solid #4caf50;
+            padding: 10px;
+            margin: 20px auto;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #4caf50;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .copy-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Já que entrou, vai ter que mandar!!!! 🎁</h1>
+    <p>Escaneie o QR Code abaixo ou copie o código PIX:</p>
+    <img src="qrcode.jpg" alt="QR Code do meu Pix">
+    <div class="codigo-pix" id="pix-code">34 98800-5686</div>
+    <button class="copy-btn" onclick="copyPix()">Copiar Código PIX</button>
+    <p>Obrigadooo pelo pixx :D</p>
+
+    <script>
+        function copyPix() {
+            const pixCode = document.getElementById('pix-code').textContent;
+            navigator.clipboard.writeText(pixCode).then(() => {
+                alert('Código PIX copiado!');
+            }).catch(err => {
+                alert('Erro ao copiar o código PIX.');
+                console.error(err);
+            });
+        }
+    </script>
+</body>
+</html>
